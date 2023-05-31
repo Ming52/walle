@@ -4,13 +4,6 @@
 # In[ ]:
 
 
-import sys
-sys.path.append("C:\Users\30353\.conda\envs\eliza_working\Lib\site-packages\fastai")
-
-
-# In[ ]:
-
-
 import streamlit as st
 
 
@@ -35,19 +28,19 @@ import pathlib
 # In[ ]:
 
 
-temp = pathlib.PosixPath
+#temp = pathlib.PosixPath
 
 
 # In[ ]:
 
 
-pathlib.PosixPath = pathlib.WindowsPath
+#pathlib.PosixPath = pathlib.WindowsPath
 
 
 # In[ ]:
 
 
-path = os.path.dirname(os.path.abspath(__file__))
+#path = os.path.dirname(os.path.abspath(__file__))
 
 
 # In[ ]:
@@ -65,7 +58,7 @@ learn_inf = load_learner(model_path)
 # In[ ]:
 
 
-pathlib.PosixPath = temp
+#pathlib.PosixPath = temp
 
 
 # In[ ]:
