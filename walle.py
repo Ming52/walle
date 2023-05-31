@@ -4,12 +4,6 @@
 # In[ ]:
 
 
-pip install fastai
-
-
-# In[ ]:
-
-
 import streamlit as st
 
 
