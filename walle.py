@@ -4,6 +4,12 @@
 # In[ ]:
 
 
+get_ipython().system('pip install fastai')
+
+
+# In[ ]:
+
+
 import streamlit as st
 
 
@@ -64,12 +70,6 @@ pathlib.PosixPath = temp
 # In[ ]:
 
 
-
-
-
-# In[ ]:
-
-
 uploaded_file = st.file_uploader("Choose an image...",
                                 type=["jpg","png","jpeg"])
 
@@ -82,22 +82,4 @@ if uploaded_file is not None:
     st.image(img.to_thumb(500,500),caption='Your Image')
     pred,pred_idx,probs = learn_inf.predict(img)
     st.write(f'Prediction:{pred};Probability:{probs[pred_idx]:.04f}')
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
