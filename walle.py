@@ -4,6 +4,13 @@
 # In[ ]:
 
 
+import sys
+sys.path.append("C:\Users\30353\.conda\envs\eliza_working\Lib\site-packages\fastai")
+
+
+# In[ ]:
+
+
 import streamlit as st
 
 
