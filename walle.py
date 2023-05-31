@@ -1,55 +1,27 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import streamlit as st
-
-
-# In[ ]:
-
-
 import os
-
-
-# In[ ]:
-
-
 from fastai.vision.all import *
 
-
-# In[ ]:
-
-
+# 获取当前文件所在的文件夹路径
 path = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(path, "export.pkl")
 
-
-# In[ ]:
-
-
-model_path = os.path.join(path, 'export.pkl')
-
-
-# In[ ]:
-
-
+# Load the model
 learn_inf = load_learner(model_path)
 
+st.title("Image Classification App")
+st.write("Upload an image and the app will predict the corresponding label.")
 
-# In[ ]:
+# Allow the user to upload an image
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
-
-uploaded_file = st.file_uploader("Choose an image...",
-                                type=["jpg","png","jpeg"])
-
-
-# In[ ]:
-
-
+# If the user has uploaded an image
 if uploaded_file is not None:
-    img = PILImage.create(uploaded_file)
-    st.image(img.to_thumb(500,500),caption='Your Image')
-    pred,pred_idx,probs = learn_inf.predict(img)
-    st.write(f'Prediction:{pred};Probability:{probs[pred_idx]:.04f}')
-
+    # Display the image
+    image = PILImage.create(uploaded_file)
+    st.image(image, caption="Uploaded Image", use_column_width=True)
+    
+    # Get the predicted label
+    pred, pred_idx, probs = learn_inf.predict(image)
+    st.write(f"Prediction: {pred}; Probability: {probs[pred_idx]:.04f}")
+    
