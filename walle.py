@@ -4,7 +4,7 @@
 # In[ ]:
 
 
-get_ipython().system('pip install fastai')
+pip install fastai
 
 
 # In[ ]:
