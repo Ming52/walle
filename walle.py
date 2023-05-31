@@ -28,19 +28,19 @@ import pathlib
 # In[ ]:
 
 
-#temp = pathlib.PosixPath
+temp = pathlib.PosixPath
 
 
 # In[ ]:
 
 
-#pathlib.PosixPath = pathlib.WindowsPath
+pathlib.PosixPath = pathlib.WindowsPath
 
 
 # In[ ]:
 
 
-#path = os.path.dirname(os.path.abspath(__file__))
+path = os.path.dirname(os.path.abspath(__file__))
 
 
 # In[ ]:
@@ -58,7 +58,7 @@ learn_inf = load_learner(model_path)
 # In[ ]:
 
 
-#pathlib.PosixPath = temp
+pathlib.PosixPath = temp
 
 
 # In[ ]:
